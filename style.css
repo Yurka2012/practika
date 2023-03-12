@@ -5,79 +5,18 @@
   --background-color: #012d63;
   --background: #dcdcdc;
 }
-
 /* reset */
-body {
-  font-family: Roboto, sans-serif, Raleway;
-  box-sizing: border-box;
-  background-color: var(--background-color);
-  color: var(--text-color);
-}
-
-p,
-h1,
-h2,
-h3 {
-  margin: 0;
-  padding: 0;
-}
-
-ul,
-ol {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-}
-
-a:hover {
-  cursor: pointer;
-
-  transition: opacity 0.3;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
+body {font-family: Roboto, sans-serif, Raleway;  box-sizing: border-box;background-color: var(--background-color);color: var(--text-color);}
+p,h1,h2,h3{margin: 0;padding: 0;}
+ul,ol {margin: 0;padding: 0;list-style: none;}
+a {text-decoration: none;}
+a:hover {cursor: pointer;transition: opacity 0.3;}
+img {display: block;max-width: 100%;height: auto;}
 /* common */
-
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-}
+.visually-hidden {position: absolute;width: 1px;height: 1px;margin: -1px;border: 0;padding: 0;white-space: nowrap;clip-path: inset(100%);  clip: rect(0 0 0 0);  overflow: hidden;}
 /* header */
-.header {
-  position: absolute;
-  /* top: 0;
-  left: 0; */
-  bottom: 0;
-  right: 0;
-
-  z-index: 1;
-  margin-right: 165px;
-  margin-left: 165px;
-  border-bottom: 1px solid #000000;
-}
-
-.header-container {
-  display: flex;
-}
-
+.header {position: absolute;bottom: 0;right: 0;z-index: 1;margin-right: 165px;margin-left: 165px;border-bottom: 1px solid #000000;}
+.header-container {  display: flex;}
 .nav {
   display: flex;
 }
@@ -384,27 +323,11 @@ img {
   color: #ffffff;
 }
 
-.material--list__item:not(:last-child) {
-  margin-right: 20px;
-}
-
-/* -----------------------------------REVIEWS---------------------------- */
-.email--input {
-  padding-left: 5px;
-}
-/*  */
-/* Estilo iOS */
-.switch__container {
-  margin: 30px auto;
-  width: 120px;
-}
-
-.switch {
-  visibility: hidden;
-  position: absolute;
-  margin-left: -9999px;
-}
-
+.material--list__item:not(:last-child) {margin-right: 20px;}
+/* ios_switch */
+.email--input {  padding-left: 5px;}
+.switch__container {  margin: 30px auto;  width: 120px;}
+.switch {visibility: hidden;position: absolute;margin-left: -9999px;}
 .switch + label {  display: block;  position: relative;  cursor: pointer;  outline: none;  user-select: none;  border: 1px solid #ffffff;}
 .switch--shadow + label {padding: 2px;width: 120px;height: 60px;border-radius: 60px;}
 .switch--shadow + label:before,
