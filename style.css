@@ -63,3 +63,4 @@ img {display: block;max-width: 100%;height: auto;}
 .switch--shadow + label:after {width: 40px;height: 37px;background-color: #fff;border-radius: 50%;box-shadow: 0 2px 5px rgb(0 0 0 / 30%);transition: all 0.4s;}
 .switch--shadow:checked + label:before {background-color: #8ce196;}
 .switch--shadow:checked + label:after {transform: translateX(60px);}
+.li:hover, .nav__list--link:hover {color: #ffff}
