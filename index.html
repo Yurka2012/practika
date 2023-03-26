@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=PT+Serif&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
+  <link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/"
     integrity="sha512-wpPYUAdjBVSE4KJnH1VR1HeZfpl1ub8YT/NKx4PuQ5NmX2tKuGu6U/JRp5y+Y8XG2tV+wKQpNHVUX03MfMFn9Q=="
     rossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
-    header {}
 
     ul {
       list-style: none;
@@ -122,16 +121,16 @@
     </section>
     <section style="background: url(./images/reviews/background.jpg);">
       <h2
-        style="font-family: 'Playfair Display';font-style: normal;font-weight: 400;font-size: 48px;line-height: 64px;text-align: center;color: #FFFFFF;">
+        style="font-family: 'Playfair Display';font-style: normal;font-weight: 400;font-size: 48px;line-height: 64px;text-align: center;color: #FFFFFF; min-height: 3px;">
         Reviews</h2>
-      <br />
-      <ul style="display: flex;">
-        <li> <img src="./images/reviews/цветы 2 1.webp" alt="" style="display: inline;margin: 0;margin-top: 10%;"></li>
+      <ul style="display: flex;min-height: 350px;">
+        <li> <img src="./images/reviews/цветы 2 1.webp" alt="" style="display: inline;margin: 0;margin-top: 10%;height: 230px;"></li>
         <li
-          style="background: linear-gradient(136.55deg, #00E5E6 7.29%, #00A8F7 26.04%, #9A76F9 62.5%, #CC5EC2 100%); border-radius: 15px;width: 15%; margin-left: 10%; font-size: 30px;">
+          style="
+          background: linear-gradient(136.55deg, #00E5E6 7.29%, #00A8F7 26.04%, #9A76F9 62.5%, #CC5EC2 100%); border-radius: 15px;width: 15%; margin-left: 10%; font-size: 30px;
+          box-shadow: 17px 19px 5px 0px rgba(0, 187, 255, 0.75),58px 48px 5px 0px rgba(37, 109, 135, 0.75);height: 270px;">
           <p>
-            Sneakers are very comfortable and well painted, nothing has worn
-            off in a year.
+            Sneakers are very comfortable and well painted, nothing has worn off in a year.
           </p>
           <p
             style="font-family: 'Roboto';font-style: normal;font-weight: 400; font-size: 12px;line-height: 14px;color: #D8D8D8;">
@@ -144,12 +143,13 @@
             With us from 2018</p>
         </li>
         <li style="background: linear-gradient(136.55deg, #FF68B4 0%, #FF45E1 26.04%, #CE3AFF 62.84%, #8961FF 100%);
-        border-radius: 15px;width: 15%; margin-left: 15%; font-size: 30px;">
+        border-radius: 15px;width: 15%; margin-left: 15%; font-size: 30px;height: 270px;
+        box-shadow: 17px 19px 5px 0px rgba(255, 0, 106, 0.75),58px 48px 5px 0px rgba(73, 18, 65, 0.75);">
           <p>
             I'm very happy with this color scheme. They match all my clothes.
           </p>
           <p
-            style="font-family: 'Roboto';font-style: normal;font-weight: 400; font-size: 12px;line-height: 14px;color: #D8D8D8;">
+            style="font-family: 'Roboto';font-style: normal;font-weight: 400; font-size: 12px;line-height: 14px;color: #D8D8D8;height: auto;">
             25.11</p>
           <br>
           <br />
@@ -163,7 +163,7 @@
             With us from 2020</p>
         </li>
         <li style="background: linear-gradient(142.67deg, #FFE128 0%, #FF9B5C 30.21%, #FF8381 63.29%, #FF5489 100%);
-        border-radius: 15px;width: 15%; margin-left: 15%; font-size: 30px;">
+        border-radius: 15px;width: 15%; margin-left: 15%; font-size: 30px;box-shadow: 17px 19px 5px 0px rgba(255, 247, 0, 0.75),58px 48px 5px 0px rgba(135, 92, 37, 0.75);">
           <p>
             Just right if you need to go to a party. I use them actively, the
             paint is super.
@@ -184,15 +184,16 @@
       </ul>
     </section>
 
-    <section style="background: url(./images/order-back.png); width: 1440px;  height: 510px;">
+    <section style="background: url(./images/order-back.png); width: 1440px;  height: 510px;align-items: center;text-align: center;">
       <h2
         style="text-align: center; font-family: 'Playfair Display';    font-style: normal;    font-weight: 400;    font-size: 48px;    line-height: 64px;">
         Order</h2>
       <form>
-        <span style="background: #FFFFFF;    border: 1px solid #000000;border-radius: 50px;">
+        <span style="box-sizing: border-box;width: 690px;height: 50px;background: #FFFFFF;border: 1px solid #000000;border-radius: 50px;" >
+
           <label for="input">Your email is:</label>
-          <input class="inpu" id="input" type="text" placeholder="Write your email" />
-          <button style="background: #FFFFFF;    border: 1px solid #000000;border-radius: 50px;">
+          <input class="inpu" id="input" type="text" placeholder="Write your email" style="box-sizing: border-box;width: 690px;height: 50px;background: #FFFFFF;border: 1px solid #000000;border-radius: 50px;">
+          <button style="background: #FFFFFF;    border: 1px solid #000000;border-radius: 50px;height: 50px;">
             <p class="button-confirm_down1!">Confirm</p>
           </button>
         </span>
