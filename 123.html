@@ -1,0 +1,92 @@
+<!-- Подключение библиотеки Three.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+<!-- Создание контейнера для отображения 3D сцены -->
+<div id="container"></div>
+
+<!-- CSS стили для контейнера -->
+<style>
+  #container {
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+  }
+</style>
+<script>// Инициализация сцены, камеры и рендера
+    var scene = new THREE.Scene();
+    var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    camera.position.z = 5;
+    var renderer = new THREE.WebGLRenderer();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.getElementById('container').appendChild(renderer.domElement);
+    
+    // Создание кубика Рубика
+    var cubeSize = 1;
+    var cubeGeometry = new THREE.BoxGeometry(cubeSize, cubeSize, cubeSize);
+    var cubeMaterials = [
+      new THREE.MeshBasicMaterial({color: 0xffffff}), // Белый
+      new THREE.MeshBasicMaterial({color: 0xff0000}), // Красный
+      new THREE.MeshBasicMaterial({color: 0x00ff00}), // Зеленый
+      new THREE.MeshBasicMaterial({color: 0x0000ff}), // Синий
+      new THREE.MeshBasicMaterial({color: 0xffff00}), // Желтый
+      new THREE.MeshBasicMaterial({color: 0xffa500}) // Оранжевый
+    ];
+    var cube = new THREE.Mesh(cubeGeometry, cubeMaterials);
+    scene.add(cube);
+    
+    // Вращение кубика Рубика
+    var rotateX = new THREE.Matrix4().makeRotationX(Math.PI / 2);
+    var rotateY = new THREE.Matrix4().makeRotationY(Math.PI / 2);
+    var rotateZ = new THREE.Matrix4().makeRotationZ(Math.PI / 2);
+    
+    function rotateFace(face, direction) {
+      var faceIndices = {
+        'front': [10, 11, 2, 3],
+        'back': [4, 5, 8, 9],
+        'right': [2, 11, 7, 6],
+        'left': [0, 1, 8, 5],
+        'top': [0, 3, 7, 4],
+        'bottom': [1, 6, 10, 9]
+      };
+      var indices = faceIndices[face];
+      var rotationMatrix = null;
+      if (face == 'front' || face == 'back') {
+        rotationMatrix = rotateZ;
+      } else if (face == 'right' || face == 'left') {
+        rotationMatrix = rotateX;
+      } else {
+        rotationMatrix = rotateY;
+      }
+      if (direction == 'clockwise') {
+        indices.push(indices.shift());
+      } else {
+        indices.unshift(indices.pop());
+      }
+      for (var i = 0; i < indices.length; i++) {
+        var index = indices[i];
+        var vertex = cube.geometry.vertices[index];
+        vertex.applyMatrix4(rotationMatrix);
+      }
+      cube.geometry.verticesNeedUpdate = true;
+    }
+    
+    // Обработчик нажатия кнопок
+    document.addEventListener('keydown', function(event) {
+      switch (event.code) {
+        case 'KeyF': // Поворот грани F
+          rotateFace('front', 'clockwise');
+          break;
+        case 'ShiftLeft':
+          rotateFace('front', 'anticlockwise');
+          break;
+        // Добавить обработчики для остальных граней и направлений
+      }
+    });
+    
+    // Функция анимации
+    function animate() {
+      requestAnimationFrame(animate);
+      renderer.render(scene, camera);
+    }
+    animate();</script>
+
